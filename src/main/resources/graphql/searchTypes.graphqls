@@ -1,0 +1,18 @@
+type FruitSearchResult  {
+    description: String!
+    price: Int
+    expiry : String
+}
+
+type ElectronicsSearchResult {
+    id: ID!
+    description: String!
+    price: Int
+    brand : String
+}
+type BookSearchResult {
+    description: String!
+    author : String
+}
+
+union Result = BookSearchResult | ElectronicsSearchResult | FruitSearchResult

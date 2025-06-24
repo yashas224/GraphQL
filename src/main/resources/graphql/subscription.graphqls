@@ -1,0 +1,16 @@
+type Subscription {
+    customerEvents: CustomerEvent
+}
+
+type CustomerEvent{
+    id: ID!
+    action: Action
+}
+
+enum Action {
+    CREATED
+    UPDATED
+    DELETED
+}
+
+#  handler methods in CustomerEventController

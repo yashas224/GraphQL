@@ -1,0 +1,82 @@
+query getALlItems {
+  getItems {
+    id
+    description
+    price
+    __typename
+    ... on Book {
+      author
+    }
+    ... on Fruit{
+      expiry
+    }
+    ... on Electronics{
+      brand
+    }
+  }
+}
+
+
+
+{
+  search{
+    __typename
+      ... on BookSearchResult {
+      description
+      author
+    }
+    ... on FruitSearchResult{
+      description
+      price
+      expiry
+    }
+    ... on ElectronicsSearchResult{
+      id
+      description
+      price
+      brand
+    }
+  }
+}
+
+
+query getByIdDB($id: ID!){
+ customerByIdDB(id: $id){
+  name
+  age
+  city
+  id
+}
+}
+
+variables
+
+{
+  "id":"4"
+}
+
+// mutation
+
+mutation createCustomer( $customer: CustomerInput) {
+  createCustomerDB( customer: $customer) {
+    city
+    age
+    name
+    id
+    __typename
+  }
+}
+
+variables
+{
+  "customer": {
+    "age": 60,
+    "name": "Test Name ",
+    "city": "India"
+  }
+}
+
+
+mutation deleteCustomer {
+  deleteCustomerDB(id:4)
+}

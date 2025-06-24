@@ -1,0 +1,44 @@
+directive @specifiedBy(url: String!) on SCALAR
+scalar Label
+scalar Date
+scalar Long
+
+
+type ScalarType {
+    distance:Long
+    date: Date
+
+}
+
+type Product{
+    name: String
+    label: Label
+}
+
+
+
+interface Item {
+    id: ID!
+    description: String!
+    price: Int
+}
+
+type Fruit implements Item {
+    id: ID!
+    description: String!
+    price: Int
+    expiry : String
+}
+
+type Electronics implements Item{
+    id: ID!
+    description: String!
+    price: Int
+    brand : String
+}
+type Book implements Item{
+    id: ID!
+    description: String!
+    price: Int
+    author : String
+}

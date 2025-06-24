@@ -1,0 +1,26 @@
+type Query {
+    testHealth: String
+    hi(name: String!): String
+    random: Int!
+    customers: [Customer] !
+    customerById(id: ID!) : Customer
+    customerByName(name: String!) : [Customer]!
+    customersInAgeRange(min: Int!, max: Int!) : [Customer]!
+    customersInAgeRangeType(filter : AgeFilter!) : [Customer]!
+    level1:Level1
+    getScalarTypes: [ScalarType]
+    getProducts: [Product]
+    getItems: [Item]
+    search : [Result]!
+
+    customersDB: [Customer]!
+    customerByIdDB(id: ID!): Customer
+}
+
+
+# CustomerDBController
+type Mutation {
+    createCustomerDB(customer: CustomerInput): Customer
+    updateCustomerDB(id: ID!, customer: CustomerInput) : Customer
+    deleteCustomerDB(id: ID!): DeleteStatus!
+}
