@@ -1,5 +1,6 @@
 package com.graphql.trial.graphql_trial.interceptor;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.graphql.server.WebGraphQlInterceptor;
 import org.springframework.graphql.server.WebGraphQlRequest;
 import org.springframework.graphql.server.WebGraphQlResponse;
@@ -10,6 +11,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Component
+@Profile("!dev")
 class RequestHeaderInterceptor implements WebGraphQlInterceptor {
 
   @Override

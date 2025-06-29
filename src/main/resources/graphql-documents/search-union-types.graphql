@@ -1,0 +1,20 @@
+{
+    search{
+        type: __typename
+        ... on BookSearchResult {
+            description
+            author
+        }
+        ... on FruitSearchResult{
+            description
+            price
+            expiry
+        }
+        ... on ElectronicsSearchResult{
+            id
+            description
+            price
+            brand
+        }
+    }
+}

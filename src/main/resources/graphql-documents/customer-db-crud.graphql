@@ -1,0 +1,34 @@
+query GetAllDB{
+    response: customersDB{
+        ...customerDetails
+    }
+}
+
+query customerByIdDB($id: ID!){
+    response: customerByIdDB(id: $id){
+        ...customerDetails
+    }
+}
+
+mutation createCustomerDB($customer: CustomerInput!){
+    response: createCustomerDB(customer: $customer){
+        ...customerDetails
+    }
+}
+
+mutation updateCustomerDB($id: ID!, $customer: CustomerInput!){
+    response: updateCustomerDB(id: $id, customer: $customer){
+        ...customerDetails
+    }
+}
+
+mutation deleteCustomerDB($id: ID!){
+    response: deleteCustomerDB(id: $id)
+}
+
+fragment customerDetails on Customer{
+    id
+    name
+    age
+    city
+}

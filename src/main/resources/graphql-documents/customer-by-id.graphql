@@ -1,0 +1,12 @@
+query getByIdDB($id: ID!){
+    customerByIdDB(id: $id){
+        ...comparisonFields
+    }
+}
+
+fragment comparisonFields on Customer {
+    name
+    age
+    city
+    id
+}

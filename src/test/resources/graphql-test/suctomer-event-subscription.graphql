@@ -1,0 +1,6 @@
+subscription{
+    customerEvents{
+        id
+        action
+    }
+}
